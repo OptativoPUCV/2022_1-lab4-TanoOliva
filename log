@@ -36,3 +36,9 @@ Thu Apr  7 11:40:25 HSP 2022:
  tests:  0|6
 total_score: 0/70
 42603fd
+Thu Apr  7 11:40:55 HSP 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|5
+total_score: 10/70
+f308bff
