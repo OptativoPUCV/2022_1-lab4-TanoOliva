@@ -137,7 +137,7 @@ Pair * firstMap(HashMap * map) {
             map->current = idx;
             return map->buckets[idx];
         }
-        idx++;
+        idx = ((idx + 1) % map->capacity); 
     }
     //si retorna null significa que no habia ningun elemento en el arrgelo 
     return NULL;
@@ -149,6 +149,8 @@ Pair * nextMap(HashMap * map) {
             map->current=idx;
             return map->buckets[idx];
         }
+        idx = ((idx + 1) % map->capacity); 
     }
+
     return NULL;
 }
