@@ -82,7 +82,9 @@ void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
     Pair ** old_buckets = (Pair**) calloc (map->capacity,sizeof(Pair*));
     for (long idx=0; idx<map->capacity;idx++){
-        old_buckets[idx]=createPair(map->buckets[idx]->key,map->buckets[idx]->value);
+        if(map->buckets[idx] != NULL && map->buckets[idx]->key != NULL){
+            old_buckets[idx]=createPair(map->buckets[idx]->key,map->buckets[idx]->value);
+        }
     }
 
     map->capacity=map->capacity*2;
