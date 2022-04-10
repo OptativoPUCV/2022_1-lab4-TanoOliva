@@ -131,12 +131,13 @@ Pair * searchMap(HashMap * map,  char * key) {
 */
 
 Pair * firstMap(HashMap * map) {
-    for (long idx=0; idx<map->capacity;idx++){
-        if (map->buckets[idx] != NULL || map->buckets[idx]->key != NULL) {
-            map->current=idx;
+    long idx=0;
+    while (idx<map->capacity){
+        if (map->buckets[idx]->key != NULL){
+            map->current = idx;
             return map->buckets[idx];
         }
-
+        idx++;
     }
     //si retorna null significa que no habia ningun elemento en el arrgelo 
     return NULL;
