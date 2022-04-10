@@ -74,13 +74,24 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {    
-
+    
 
 }
+/*
+a - Usar la función hash para obtener la posición donde puede encontrarse el par con la clave 
 
+b - Si la clave no se encuentra avance hasta encontrarla (*método de resolución de colisiones*)
+
+c - Si llega a una casilla nula, retorne NULL inmediatamente (no siga avanzando, la clave no está)
+*/
 Pair * searchMap(HashMap * map,  char * key) {   
-
-
+    long idx = hash(key,map->capacity);
+    while (map->buckets[idx] != NULL){
+        if (map->buckets[idx]->key==key){
+            return map->buckets[idx];
+        }
+        idx++;
+    }
     return NULL;
 }
 
