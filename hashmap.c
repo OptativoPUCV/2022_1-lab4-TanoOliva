@@ -97,11 +97,13 @@ Pair * searchMap(HashMap * map,  char * key) {
     long idx = hash(key,map->capacity);
     while (map->buckets[idx] != NULL && map->buckets[idx]->key!=NULL){
 
-        if (is_equal(key,map->buckets[idx]->key) != 1){
+        if (is_equal(key,map->buckets[idx]->key) == 1){
             return map->buckets[idx];
+            map->current = idx;
         }
         idx = (idx + 1) % map->capacity; 
     }
+
     return NULL;
 }
 
