@@ -101,7 +101,7 @@ Pair * searchMap(HashMap * map,  char * key) {
             return map->buckets[idx];
             map->current = idx;
         }
-        idx = (idx + 1) % map->capacity; 
+        idx = ((idx + 1) % map->capacity); 
     }
 
     return NULL;
