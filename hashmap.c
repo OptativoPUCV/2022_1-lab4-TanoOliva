@@ -86,11 +86,11 @@ c - Si llega a una casilla nula, retorne NULL inmediatamente (no siga avanzando,
 */
 Pair * searchMap(HashMap * map,  char * key) {   
     long idx = hash(key,map->capacity);
-    while (map->buckets[idx] != NULL){
+    while (map->buckets[idx] != NULL && map->buckets[idx]->key!=NULL){
         if (map->buckets[idx]->key==key){
             return map->buckets[idx];
         }
-        idx++;
+        idx = (idx + 1) % map->capacity; 
     }
     return NULL;
 }
