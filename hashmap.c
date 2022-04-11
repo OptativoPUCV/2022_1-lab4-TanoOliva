@@ -79,24 +79,7 @@ d - Inicialice size a 0.
 e - Inserte los elementos del arreglo *old_buckets* en el mapa (use la función insertMap que ya implementó).
 */
 
-/*
-void enlarge(HashMap * map)
-{
-    enlarge_called = 1;
-    Pair ** oldBuckets;
-    oldBuckets = map->buckets;
-    long oldCapacity = map->capacity;
-    map->buckets = (Pair **) calloc (oldCapacity*2 , sizeof(HashMap));
-    map->capacity = oldCapacity*2;
-    for (long index = 0 ; index < oldCapacity ; index += 1)
-    {
-        if (oldBuckets[index] != NULL && oldBuckets[index]->key != NULL)
-        {
-            insertMap(map , oldBuckets[index]->key , oldBuckets[index]->value);
-        }
-    }
-}
-*/
+
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
     Pair ** old_buckets;
